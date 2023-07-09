@@ -1,0 +1,133 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../consts";
+import ProfileCard from "../components/ProfileCard.astro";
+import MapCard from "../components/MapCard.astro";
+import ContactDetailsCard from "../components/ContactDetailsCard.astro";
+import ProjectCard from "../components/ProjectCard.astro";
+import ProfileStory from "../components/ProfileStory.astro";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
+	</head>
+	<body>
+		<main>
+			<div
+				class="container mx-auto py-24 gap-8 flex border-b border-zinc-300"
+			>
+				<div class="flex flex-col gap-8">
+					<div class="max-w-xl">
+						<h1
+							class="text-5xl tracking-tighter font-bold max-w-screen-md"
+						>
+							Discover Zimbabwean techstars
+						</h1>
+						<p class="mt-2">
+							Discover tech talent from Zimbabwe, sent directly to
+							your inbox every week.
+						</p>
+					</div>
+					<div class="mt-4">
+						<form class="max-w-2xl flex gap-4 items-center">
+							<input
+								class="py-2 px-4 border border-zinc-300 rounded-xl bg-white shadow"
+								placeholder="you@example.com"
+							/>
+							<button
+								class="py-2 px-6 rounded-xl font-semibold text-white bg-blue-600"
+							>
+								Subscribe
+							</button>
+						</form>
+					</div>
+				</div>
+				<div class="flex-shrink-0 w-full md:w-1/2">
+					<div
+						class="mx-auto h-full rounded-xl bg-zinc-100 flex items-center justify-center p-8 py-12 pt-16"
+					>
+						<div class="w-full relative">
+							<div
+								class="drop-shadow bg-white absolute z-10 rounded-xl scale-90 top-0 -translate-y-6 left-0 w-full aspect-video"
+							>
+							</div>
+							<div
+								class="drop-shadow-xl bg-white absolute z-0 rounded-xl scale-75 top-0 -translate-y-14 left-0 w-full aspect-video"
+							>
+							</div>
+							<div class="flex z-20 relative">
+								<ContactDetailsCard />
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="container mx-auto py-24 border-b border-zinc-300">
+				<div class="mb-8">
+					<h2
+						class="text-3xl font-bold tracking-tighter text-zinc-950"
+					>
+						Latest issue
+					</h2>
+				</div>
+				<div class="grid grid-cols-2 gap-8">
+					<ProfileStory />
+
+					<div class="col-span-1 flex flex-col justify-between gap-8">
+						<ContactDetailsCard />
+						<MapCard />
+						<ProjectCard />
+					</div>
+				</div>
+			</div>
+			<div class="container mx-auto py-24">
+				<div class="mb-8">
+					<h2
+						class="text-3xl font-bold tracking-tighter text-zinc-950"
+					>
+						Popular with people
+					</h2>
+				</div>
+				<div class="grid grid-cols-3 gap-8">
+					<ProfileCard />
+					<ProfileCard />
+					<ProfileCard />
+				</div>
+			</div>
+			<div class="container mx-auto py-8">
+				<div class="mb-8">
+					<h2
+						class="text-zinc-950 text-3xl font-bold tracking-tighter"
+					>
+						Browse all
+					</h2>
+				</div>
+				<div class="grid grid-cols-3 gap-8">
+					<ProfileCard />
+					<ProfileCard />
+					<ProfileCard />
+				</div>
+			</div>
+			<div class="py-24 container mx-auto flex justify-center">
+				<button
+					class="px-6 py-2 font-semibold rounded-full shadow-sm border"
+				>
+					Load more</button
+				>
+			</div>
+			<Footer />
+		</main>
+		<style>
+			#featured-profiles > img {
+				left: 50%;
+				top: 50%;
+
+				@apply -translate-x-[50%] -translate-y-[50%];
+			}
+		</style>
+	</body>
+</html>

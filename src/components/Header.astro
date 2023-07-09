@@ -1,0 +1,20 @@
+---
+import HeaderLink from "./HeaderLink.astro";
+import { SITE_TITLE } from "../consts";
+---
+
+<header class="container mx-auto w-full">
+	<nav>
+		<HeaderLink href="/">Home</HeaderLink>
+		<HeaderLink href="/people">Blog</HeaderLink>
+		<HeaderLink href="/about">About</HeaderLink>
+		<HeaderLink href="https://twitter.com/astrodotbuild" target="_blank">
+			Twitter
+		</HeaderLink>
+	</nav>
+</header>
+<style>
+	h2 {
+		margin: 0.5em 0;
+	}
+</style>
