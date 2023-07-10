@@ -4,13 +4,16 @@ import { SITE_TITLE } from "../consts";
 ---
 
 <header class="container mx-auto w-full">
-	<nav>
-		<HeaderLink href="/">Home</HeaderLink>
-		<HeaderLink href="/people">Blog</HeaderLink>
-		<HeaderLink href="/about">About</HeaderLink>
-		<HeaderLink href="https://twitter.com/astrodotbuild" target="_blank">
-			Twitter
-		</HeaderLink>
+	<nav class="flex justify-between">
+		<div class="flex gap-2">
+			<HeaderLink href="/">Developer Index</HeaderLink>
+		</div>
+		<a
+			href="/"
+			class="px-6 rounded-xl py-2 font-semibold bg-gradient-to-b from-blue-700 via-blue-6 00 to-blue-500 shadow text-white"
+		>
+			Apply
+		</a>
 	</nav>
 </header>
 <style>

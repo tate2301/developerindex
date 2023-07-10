@@ -10,7 +10,7 @@ const isActive = href === pathname || href === pathname.replace(/\/$/, "");
 ---
 
 <a
-	class="rounded-full py-2 px-6"
+	class="rounded-full p-2 font-semibold"
 	href={href}
 	class:list={[className, { active: isActive }]}
 	{...props}
@@ -21,8 +21,5 @@ const isActive = href === pathname || href === pathname.replace(/\/$/, "");
 	a {
 		display: inline-block;
 		text-decoration: none;
-	}
-	a.active {
-		@apply bg-zinc-950 text-white;
 	}
 </style>
